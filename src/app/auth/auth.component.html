@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col-xs-12 col-md-6 offset-md-3">
+    <form #authFormRef="ngForm" (ngSubmit)="onAuthFormSubmit(authFormRef)">
+      <!-- EMAIL - Input -->
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          class="form-control"
+          email
+          ngModel
+          required
+        />
+      </div>
+
+      <!-- PASSWORD - Input -->
+      <div class="form-group">
+        <label for="password">Password</label>
+
+        <input
+          type="password"
+          id="password"
+          name="password"
+          class="form-control"
+          minlength="6"
+          ngModel
+          required
+        />
+      </div>
+
+      <!-- SUBMIT - Button -->
+      <button
+        type="submit"
+        class="btn btn-primary mr-3"
+        [disabled]="!authFormRef.valid"
+      >
+        {{ isSignUpMode ? "Sign Up" : "Sign In" }}
+      </button>
+
+      <!-- TOGGLE - Button -->
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="onAuthModeToggle()"
+      >
+        Switch to {{ isSignUpMode ? "Sign In" : "Sign Up" }}
+      </button>
+    </form>
+  </div>
+</div>

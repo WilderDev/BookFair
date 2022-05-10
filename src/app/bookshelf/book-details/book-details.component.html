@@ -1,0 +1,61 @@
+<!-- TITLE -->
+<div class="row">
+  <div class="col-md-12">
+    <h3>{{ book.title }}</h3>
+  </div>
+</div>
+
+<!-- AUTHOR -->
+<div class="row">
+  <div class="col-md-12">
+    <h4>{{ book.author }}</h4>
+  </div>
+</div>
+
+<!-- GENRE -->
+<div class="row">
+  <div class="col-md-12">
+    <p>{{ book.genre }}</p>
+  </div>
+</div>
+
+<!-- COVER IMAGE -->
+<div class="row">
+  <div class="col-md-12">
+    <img
+      src="{{ book.coverImg }}"
+      alt="{{ book.title }} - Book Cover"
+      class="img-responsive"
+      style="max-height: 250px"
+    />
+  </div>
+</div>
+
+<!-- EDIT BOOK BUTTON -->
+<div class="row mt-4">
+  <div class="col-md-12">
+    <div class="dropdown" appDropdown>
+      <button
+        class="btn btn-primary dropdown-toggle"
+        type="button"
+        id="dropdownMenuButton"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Edit Book
+      </button>
+      <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <a class="dropdown-item" style="cursor: pointer" (click)="onEditBook()"
+          >Update book</a
+        >
+        <a
+          class="dropdown-item"
+          style="cursor: pointer"
+          (click)="onDeleteBook()"
+          >Delete Book</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

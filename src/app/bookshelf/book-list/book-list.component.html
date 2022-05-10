@@ -1,0 +1,26 @@
+<div
+  class="row mb-3"
+  *ngFor="let bookEl of myBooks | sortBooks: sortField; let i = index"
+>
+  <div class="col-md-12">
+    <app-book [book]="bookEl" [bookIndex]="i"></app-book>
+    <button
+      class="float-right"
+      style="border: none; font-size: 1rem"
+      (click)="onRemoveBookFromBookshelf(i)"
+    >
+      &minus;
+    </button>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <button class="btn btn-primary mr-3" (click)="onAddNewBook()">
+      Add new book
+    </button>
+    <button class="btn btn-secondary" (click)="onSortBooks()">
+      Sort by {{ sortField == "author" ? "Title" : "Author" }}
+    </button>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<a
+  style="cursor: pointer"
+  class="list-group-item clearfix"
+  [routerLink]="[bookIndex]"
+>
+  <div class="float-left">
+    <h4 class="list-group-item-heading">{{ book.title }}</h4>
+    <p class="list-group-item-text mb-0">{{ book.genre }}</p>
+  </div>
+  <div class="float-right">
+    <img
+      src="{{ book.coverImg }}"
+      alt="{{ book.title }}"
+      class="img-responsive rounded"
+      style="max-height: 50px"
+    />
+  </div>
+</a>
