@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import { BookComponent } from './book/book.component';
+import { DropdownDirective } from './directives/dropdown.directive';
 import { NotificationComponent } from './notification/notification.component';
 
 @NgModule({
-  declarations: [BookComponent, NotificationComponent], // Components, Directives, Pipes that we need across our application
+  declarations: [BookComponent, NotificationComponent, DropdownDirective], // Components, Directives, Pipes that we need across our application
   imports: [CommonModule, RouterModule, FormsModule], // Modules we need across multiples features / routes
   exports: [BookComponent, NotificationComponent, CommonModule, FormsModule]
 })
